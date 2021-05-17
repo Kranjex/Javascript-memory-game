@@ -3,19 +3,19 @@ const board = document.getElementById('board'); // board element
 const restartBtn = document.getElementById('restartButton'); // restart button
 const easyMode = document.getElementById('easyMode'); // easy mode button
 const hardMode = document.getElementById('hardMode'); // hard mode button
-const stopwatch = document.getElementById('timer');
-const scoreboard = document.getElementById('score');
+const stopwatch = document.getElementById('timer'); // timer placeholder
+const scoreboard = document.getElementById('score'); // scoreborad / score placeholder
 
 // Variables
-// Spremenljivki za težavnost igranja
+// Variables for game dificulty
 let hardModeON = false;
 let easyModeON = false;
 
-// Sprmenljivki za primerjavo obrnjenih kartic
+// Variables for comparing clicked cards
 let clickedCards = [];
 let clickedCardsID = [];
 
-// Spremenljivki za čas in točke
+// Variables for score, moves and time
 let score = 0;
 let moves = 0;
 let seconds = 0;
@@ -51,7 +51,7 @@ Cards.sort(() => 0.5 - Math.random());
 // 3 x 3 layout
 // });
 
-// Zaenkrat deluje samo ta
+// Right now, this is the only one working mode
 // Hard mode layout creation Event listener
 hardMode.addEventListener('click', () => {
   // 4 x 4 layout
@@ -130,5 +130,3 @@ function matchCheck() {
   clickedCards = [];
   clickedCardsID = [];
 }
-
-// Dodaj števec za poteze
