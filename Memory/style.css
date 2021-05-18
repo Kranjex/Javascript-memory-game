@@ -126,3 +126,40 @@ img {
   justify-content: center;
   align-items: center;
 }
+
+.numberAnim {
+  animation: numberAnimation 1s linear infinite;
+}
+.scoreAnim {
+  animation: scoreAnimation 0.5s linear;
+}
+
+@keyframes numberAnimation {
+  0% {
+    transform: scale(1);
+    color: rgb(24, 24, 24);
+  }
+  50% {
+    transform: scale(1.1);
+    color: rgb(68, 68, 68);
+  }
+  100% {
+    transform: scale(1);
+    color: rgb(24, 24, 24);
+  }
+}
+
+@keyframes scoreAnimation {
+  0% {
+    transform: scale(1);
+    color: rgb(24, 24, 24);
+  }
+  50% {
+    transform: scale(1.1);
+    color: rgb(68, 68, 68);
+  }
+  100% {
+    transform: scale(1);
+    color: rgb(24, 24, 24);
+  }
+}

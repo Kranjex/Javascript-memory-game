@@ -67,6 +67,7 @@ hardMode.addEventListener('click', () => {
       card.appendChild(image);
       board.appendChild(card);
     }
+    stopwatch.classList.add('numberAnim');
     Timer = setInterval(() => {
       if (hardModeON) {
         seconds++;
@@ -89,24 +90,27 @@ restartBtn.addEventListener('click', () => {
   easyModeON = false;
   clearInterval(Timer);
   score = 0;
+  moves = 0;
   seconds = 0;
   minutes = 0;
   stopwatch.innerText = '00:00';
+  stopwatch.classList.remove('numberAnim');
   scoreboard.innerText = '0';
 });
 
 // Flip function
 function flipCard(e) {
-  // e.target.classList.toggle('flipped');
   var cardID = e.target.getAttribute('data-id');
   clickedCards.push(Cards[cardID].name);
   clickedCardsID.push(cardID);
   e.target.setAttribute('src', Cards[cardID].img);
+  scoreboard.classList.remove('scoreAnim');
   if (clickedCards.length === 2) {
+    moves++;
+    scoreboard.innerText = moves;
+    scoreboard.classList.add('scoreAnim');
     setTimeout(matchCheck, 500);
   }
-  moves++;
-  scoreboard.innerText = Math.round(moves / 2);
 }
 
 // Check for match
